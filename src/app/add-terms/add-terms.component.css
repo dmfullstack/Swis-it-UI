@@ -1,0 +1,26 @@
+.termInputBox input {
+	width: 400px;
+}
+
+.termInputBox {
+	margin: 6% auto 0 20%;
+}
+
+h1{
+	text-align: center;
+	margin-top: 10%;
+}
+
+.termbox {
+	background: rgba(220, 223, 229,0.9);
+	width: 700px;
+	margin-left: 25%
+}
+
+.termbank {
+	background: url("../../assets/img/bg5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+	height: 700px;
+}

@@ -1,0 +1,75 @@
+<div>
+  <div *ngIf="terms">  
+    <div *ngIf="terms[0].adjective">
+      <div *ngIf="terms[0].adjective.syn">
+        <p>Adjective Synonyms: </p>
+        <div *ngFor = "let adj of terms[0].adjective.syn">
+
+          <input type="checkbox"   name="syncheck" value="{{adj}}" (change)="saveSyn($event)">{{adj}}
+          <div *ngIf=" (a==adj) ">
+            <md-input-container >
+              <input mdInput placeholder="weight" #weight type="number" min="1" max="10" step="1" (blur)="valuesSyn(weight.value)" >
+            </md-input-container>
+          </div>
+        </div> 
+      </div>
+        <!-- <div *ngFor="let item of term"> -->
+      <!-- <div *ngIf="item == {{adj}}"> 
+            <md-input-container >
+              <input mdInput placeholder="weight" #weight type="number" min="1" max="10" step="1"  >
+            </md-input-container>
+          </div>
+ -->
+
+      <div *ngIf="terms[0].adjective.ant"> 
+        <p>Adjective Antonyms: </p>
+        <div *ngFor = "let adj of terms[0].adjective.ant">
+
+          <input type="checkbox"  name="syncheck" value="{{adj}}" (change)="saveAnt($event)">{{adj}}
+        <div *ngIf=" (a==adj) ">
+            <md-input-container >
+              <input mdInput placeholder="weight" #weight type="number" min="1" max="10" step="1" (blur)="valuesAnt(weight.value)" >
+            </md-input-container>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+    <div *ngIf="terms[0].noun">
+      <div *ngIf="terms[0].noun.syn"> 
+        <p>Noun Synonyms: </p>
+        <div *ngFor = "let noun of terms[0].noun.syn">  
+          <input type="checkbox" name="syncheck" value="{{noun}}"
+          (change)="saveSyn($event)"  
+          >{{noun}}
+          <div *ngIf=" (a==noun) ">
+            <md-input-container >
+              <input mdInput placeholder="weight" #weight type="number" min="1" max="10" step="1" (blur)="valuesSyn(weight.value)" >
+            </md-input-container>
+          </div>
+        </div>
+      </div>  
+      <div *ngIf="terms[0].noun.ant">
+        <p>Noun Antonyms: </p>
+        <div *ngFor = "let noun of terms[0].noun.ant">
+          <input type="checkbox" #term name="syncheck" value="{{noun}}"   (change)="saveAnt($event)">{{noun}}          
+        <div *ngIf=" (a==noun) ">
+            <md-input-container >
+              <input mdInput placeholder="weight" #weight type="number" min="1" max="10" step="1" (blur)="valuesAyn(weight.value)" >
+            </md-input-container>
+          </div>
+        </div> 
+      </div>
+    </div>
+
+  </div><br>  
+  <button (click) = "saveall($event)">Save</button></div>
+  <!-- <div *ngIf="message">  
+  <p> {{ message.message }} </p>
+  </div> -->
+
+
+
+
+
+

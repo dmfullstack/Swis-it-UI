@@ -1,0 +1,37 @@
+.addTerms, .addDocuments{
+    margin: 8% auto 0 auto;
+    border: 2px solid #f7f9ff;
+    width: 300px;
+    cursor: pointer;
+    padding-bottom: 10px;
+}
+
+.adminDashboard {
+    background: url("../../assets/img/bg4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height: 670px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 6px black;
+}
+
+ .welcome {
+     font-size: 60px;
+} 
+
+span {
+    color:rgb(1,142,203);   
+}
+
+.adminbox {
+    height:550px;
+    width: 500px;
+    margin: auto;
+    padding-top: 4%;
+    background: rgba(220, 223, 229,0.7);
+}

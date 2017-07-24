@@ -1,0 +1,28 @@
+<app-usernavbar></app-usernavbar>
+<div class="addDoc">
+<div class="container">
+  <div class="searchbox">
+<br>
+<div class="row searchboxheader">
+  <h1>Add Documents Here</h1><br>
+    <!-- <h2>Enter Details</h2> -->
+  </div>
+  <div class="inputbox">
+  <div class="row"><div class="col-md-8"><md-input-container>
+    <input type="text" mdInput class="form-control querybox" required #domain placeholder="Enter Domain Here">
+    </md-input-container>
+  </div></div>
+  
+  <div class="row"><div class="col-md-8">
+    <md-input-container>
+    <input type="text" mdInput #concept required class="form-control querybox" 
+          placeholder="Enter concepts seperated with commas">
+          </md-input-container>
+    </div></div>
+  <div class="row">
+    <button type="button" class="btn btn-info btn-lg searchbtn" 
+            (click)="search(domain.value,concept.value)">Go </button>
+  </div>
+          
+</div>
+</div></div></div>

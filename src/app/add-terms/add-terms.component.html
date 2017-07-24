@@ -1,0 +1,29 @@
+<app-usernavbar></app-usernavbar>
+<div class="termbank">
+<br>
+<div class="termbox"><br><br>
+<h1>Add Terms Here</h1>
+<div class="termInputBox">
+<md-input-container id="term">
+	<input mdInput [mdAutocomplete]="auto" placeholder="Search for terms here">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+	<md-option (onSelectionChange)="searchTerm(word.TermName)" *ngFor="let word of v " [value]="word.TermName">
+		{{ word.TermName}}
+	</md-option>
+</md-autocomplete>
+
+<!-- 
+<md-input-container>
+    <input mdInput type="text" ngui-auto-complete #concept required
+    [(ngModel)]="model1" 
+    [source]="v" class="form-control querybox" placeholder="Enter Concept Here">
+	</md-input-container> -->
+
+ <div *ngIf="a"> 
+	<app-term-bank [concept]="r"></app-term-bank>
+ </div> 
+</div>
+<br><br>
+</div></div>

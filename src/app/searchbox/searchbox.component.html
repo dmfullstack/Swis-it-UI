@@ -1,0 +1,68 @@
+<div class="searchbox container" id="searchbox">
+  <!-- <center> -->
+  <div class="row">
+    <h1>Ask us Something About Java</h1>
+  </div>
+  <div class="row box"><div class="col-md-6">
+    <md-input-container>
+    <input mdInput type="text" ngui-auto-complete #concept required
+    [(ngModel)]="model1"
+    [source]="conceptDomain" class="form-control querybox" placeholder="Enter Concept Here">
+    </md-input-container>
+    </div>
+  </div>
+  <div class="row box"><div class="col-md-6">
+    <md-input-container>
+    <input mdInput type="text" ngui-auto-complete #term required
+    [(ngModel)]="model2"
+    [source]="TermDomain" class="form-control querybox" placeholder="What do you want to know?">
+    </md-input-container>
+    </div>
+  </div>
+  <div class="row">
+    
+    <button type="button" class="btn btn-info btn-lg searchbtn" (click)="search(concept.value,term.value)">SWIS-IT</button>
+  </div>
+  <!-- </center> -->
+</div>
+
+
+<div  *ngIf="userResult" id="result">
+  <div class="container searchresult">
+  <div class="searchresultheader">
+    <h1>We have found this for Java </h1>
+  </div><br><br>
+<div *ngFor="let item of userResult">
+  <div class="url-result row">
+    <div class="cols-md-8">
+      <h3>
+        
+  <a href="{{item.url}}" class="url-title">{{item.title}}</a></h3>
+  <p class="url">{{item.url}}</p>
+  <p class="url-description">{{item.description}}</p>
+  </div>
+</div><br><br>
+	<!-- <md-card class="example-card">
+  <md-card-header>
+    <div md-card-avatar class="example-header-image"></div>
+    <md-card-title></md-card-title>
+    <md-card-subtitle>{{item.url}}</md-card-subtitle>
+  </md-card-header>
+  <img md-card-image src="assets/img/examples/shiba2.jpg">
+  <md-card-content>
+    <p>
+      {{item.description}}
+    </p>
+  </md-card-content>
+  <md-card-actions>
+    <button md-button>LIKE</button>
+    <button md-button>SHARE</button>
+  </md-card-actions>
+</md-card> -->
+
+</div>
+
+  
+
+</div>
+
