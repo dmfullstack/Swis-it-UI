@@ -143,6 +143,7 @@
     height:400px;
     margin-top:10%;
     background: rgba(220, 223, 229,0.9);
+    box-shadow: 0 0 9px black;
 }
 
 .addDoc {

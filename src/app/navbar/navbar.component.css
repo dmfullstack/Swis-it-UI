@@ -60,6 +60,7 @@
 .logo {
     margin-top:0px;
     color: beige;
+    text-shadow: 0 0 20px black;
 }
 
 .navbar-nav a {
@@ -186,5 +187,9 @@ a[ class= "thumbnail" ]:target ~ #searchbox {
 
 .url {
     color: rgb(55,102,53);
+}
+
+.btn {
+    box-shadow: 0px 8px 20px 0px black;
 }
 

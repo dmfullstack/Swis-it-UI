@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { WordBankService } from 'app/service/WordBankService.service';
 
@@ -7,7 +7,7 @@ import { WordBankService } from 'app/service/WordBankService.service';
   templateUrl: './term-bank.component.html',
   styleUrls: ['./term-bank.component.css']
 })
-export class TermBankComponent implements OnInit {
+export class TermBankComponent implements  OnChanges {
   @Input()
   concept: any;
   terms= [];
@@ -28,7 +28,7 @@ export class TermBankComponent implements OnInit {
   initialrelation: string[]= [];
   aab: string[];
   constructor(private route: ActivatedRoute, private wordBankService: WordBankService){}
-  ngOnInit(): void {
+  ngOnChanges(): void {
     //this.route.params.subscribe(params => {this.obj = params['r'];
   //});
   this.obj = this.concept;

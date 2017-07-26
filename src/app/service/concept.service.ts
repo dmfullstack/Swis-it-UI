@@ -20,7 +20,7 @@ export class ConceptService {
 
     search(value) {
     console.log('inside service ' + value);
-    const url = 'http://172.23.239.164:8091/v1/api/swisit/usersearch';
+    const url = 'http://172.23.238.185:8091/v1/api/swisit/usersearch';
     const encoded_data = value;
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
@@ -34,12 +34,12 @@ export class ConceptService {
   	 // let encoded_data=value;
     //       let headers = new Headers({ 'Content-Type': 'application/json' });
     // let options = new RequestOptions({ headers: headers });
-        return this.http.get('http://172.23.239.164:8091/v1/api/swisit/usersearch/getTerms').map((res) => res.json() || []);	
+        return this.http.get('http://172.23.238.185:8091/v1/api/swisit/usersearch/getTerms').map((res) => res.json() || []);	
     }
 
     searchConcept(value) {
         console.log('inside service term');
-        const url = 'http://172.23.239.164:8091/v1/api/swisit/usersearch/getConcepts';
+        const url = 'http://172.23.238.185:8091/v1/api/swisit/usersearch/getConcepts';
         const encoded_data = value;
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
@@ -54,7 +54,7 @@ export class ConceptService {
         const options = new RequestOptions({headers: headers});
         const body = 'username=' + username + '&password=' + encodeURIComponent(password) + '&grant_type=password&' +
         'client_secret=stackroute&client_id=swissit';
-        this.http.post('http://172.23.239.202:9000/oauth/token', body, options)
+        this.http.post('http://172.23.238.203:9000/oauth/token', body, options)
         .subscribe(data => {
             console.log(data);
             localStorage.setItem('username', username);
@@ -76,7 +76,7 @@ export class ConceptService {
         // let url = 'http://localhost:8090/v1/api/termbank/';
         const headers = new Headers({ 'content-type': 'application/json' });
            const options = new RequestOptions({ headers: headers });
-         this.http.post('http://172.23.239.203:8050/v1/api/swisit/searcher', encodeddata, options)
+         this.http.post('http://172.23.238.185:8050/v1/api/swisit/searcher', encodeddata, options)
          .map((res: Response) => res.json())
          .subscribe();
         // console.log(this.http.post('http://localhost:8090/v1/api/termbank/',encodeddata,headers));

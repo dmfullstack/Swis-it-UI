@@ -9,24 +9,34 @@ import { Router } from '@angular/router';
   styleUrls: ['./add-terms.component.css']
 })
 export class AddTermsComponent implements OnInit {
-model1: any;
+    model1: any;
     v: any[];
     r: String;
     inn: String = '';
     tn: String;
     a = 0;
+    filterv: Array<any> = [];
+
     constructor(private termbankserviceService: TermbankserviceService, private router: Router){
     }
-
+    
     ngOnInit() {
-        this.termbankserviceService.GetTerms().subscribe((v) => {
-            this.v = v;
-        });
+      this.termbankserviceService.getTerms()
+      .subscribe( terms => {
+        this.v = terms;
+      } );
     }
+
+    // suggest(keywords) {
+    //   console.log(keywords);
+    //   this.v = this.v.filter(item => item.TermName.startsWith(keywords));
+    // }
+    suggest(val: string) {
+     this.filterv = this.v.filter(s => s.TermName.toLowerCase().indexOf(val.toLowerCase()) === 0);
+  }
 
     searchTerm(word: String): void {
       console.log('this is ' + word);
-      console.log(this.v[0]);
       let r: Words;
 
       for (let i = 0; i < this.v.length; i++) {
@@ -34,12 +44,12 @@ model1: any;
         console.log(this.v[i].TermName);
         this.tn = this.v[i].TermName;
         this.inn = this.inn + '*' + this.v[i].intentName + ',' + this.v[i].Relation;
-        console.log(this.r);
       }
     }
+
     this.r = this.tn + '/' + this.inn;
-    
+    console.log(this.r);
     this.a = 1;
-    //this.router.navigate(['/app-term', this.r]);
+    // this.router.navigate(['/app-term', this.r]);
     }
 }

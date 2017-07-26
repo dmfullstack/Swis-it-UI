@@ -5,11 +5,11 @@
 <h1>Add Terms Here</h1>
 <div class="termInputBox">
 <md-input-container id="term">
-	<input mdInput [mdAutocomplete]="auto" placeholder="Search for terms here">
+	<input type="text" mdInput [mdAutocomplete]="auto" placeholder="Search for terms here"  (keyup)="suggest(input.value)" #input>
 </md-input-container>
 
 <md-autocomplete #auto="mdAutocomplete">
-	<md-option (onSelectionChange)="searchTerm(word.TermName)" *ngFor="let word of v " [value]="word.TermName">
+	<md-option (onSelectionChange)="searchTerm(word.TermName)" *ngFor="let word of filterv " [value]="word.TermName">
 		{{ word.TermName}}
 	</md-option>
 </md-autocomplete>

@@ -1,6 +1,6 @@
 <div>
   <div *ngIf="terms">  
-    <div *ngIf="terms[0].adjective">
+    <div *ngIf="terms[0]&&terms[0].adjective">
       <div *ngIf="terms[0].adjective.syn">
         <p>Adjective Synonyms: </p>
         <div *ngFor = "let adj of terms[0].adjective.syn">
@@ -35,7 +35,7 @@
       </div>  
     </div>
 
-    <div *ngIf="terms[0].noun">
+    <div *ngIf="terms[0]&&terms[0].noun">
       <div *ngIf="terms[0].noun.syn"> 
         <p>Noun Synonyms: </p>
         <div *ngFor = "let noun of terms[0].noun.syn">  

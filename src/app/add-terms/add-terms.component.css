@@ -8,19 +8,22 @@
 
 h1{
 	text-align: center;
-	margin-top: 10%;
+	margin-top: 2%;
 }
 
 .termbox {
 	background: rgba(220, 223, 229,0.9);
 	width: 700px;
-	margin-left: 25%
+	margin-left: 25%;
+	margin-top: 8%;
+	box-shadow: 0 0 9px black;
 }
 
 .termbank {
 	background: url("../../assets/img/bg5.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+	background-position: center center;
+	background-attachment: fixed;
 	height: 700px;
 }

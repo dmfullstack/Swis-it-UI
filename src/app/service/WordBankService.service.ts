@@ -9,7 +9,7 @@ export class WordBankService {
     constructor(private http: Http) { }
     GetWords(terms: string) {
     // console.log(terms);
-    const url = 'http://172.23.239.162:8090/v1/api/termbank/' + terms;
+    const url = 'http://172.23.238.150:8090/v1/api/termbank/' + terms;
     return this.http.get(url)
     .map((response) => response.json() || []);
     }
@@ -20,7 +20,7 @@ export class WordBankService {
     const s = 'hai';
     console.log('haiiiiiii');
     console.log('in add service ' + encodeddata);
-    const url = 'http://172.23.239.162:8090/v1/api/termbank/';
+    const url = 'http://172.23.238.150:8090/v1/api/termbank/';
     const headers = new Headers({ 'content-type': 'application/json' });
     const options = new RequestOptions({ headers: headers, method : 'post' });
     return this.http.post(url, encodeddata, options).map((res: Response) => res.json());
