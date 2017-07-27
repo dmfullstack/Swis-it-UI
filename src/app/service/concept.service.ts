@@ -20,7 +20,7 @@ export class ConceptService {
 
     search(value) {
     console.log('inside service ' + value);
-    const url = 'http://172.23.238.185:8091/v1/api/swisit/usersearch';
+    const url = 'http://172.23.238.175:8091/v1/api/swisit/usersearch';
     const encoded_data = value;
     const headers = new Headers({ 'Content-Type': 'application/json' });
     const options = new RequestOptions({ headers: headers });
@@ -34,12 +34,12 @@ export class ConceptService {
   	 // let encoded_data=value;
     //       let headers = new Headers({ 'Content-Type': 'application/json' });
     // let options = new RequestOptions({ headers: headers });
-        return this.http.get('http://172.23.238.185:8091/v1/api/swisit/usersearch/getTerms').map((res) => res.json() || []);	
+        return this.http.get('http://172.23.238.175:8091/v1/api/swisit/usersearch/getTerms').map((res) => res.json() || []);	
     }
 
     searchConcept(value) {
         console.log('inside service term');
-        const url = 'http://172.23.238.185:8091/v1/api/swisit/usersearch/getConcepts';
+        const url = 'http://172.23.238.175:8091/v1/api/swisit/usersearch/getConcepts';
         const encoded_data = value;
         const headers = new Headers({ 'Content-Type': 'application/json' });
         const options = new RequestOptions({ headers: headers });
